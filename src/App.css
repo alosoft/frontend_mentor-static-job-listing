@@ -88,6 +88,13 @@ main {
   border-radius: 0.4rem;
   flex-wrap: wrap;
   position: relative;
+  border-left: 0.3rem solid white;
+}
+
+.job__listing__item:hover {
+  cursor: pointer;
+  border-left: 0.3rem solid var(--dark-grayish-cyan);
+
 }
 
 .job__listing__item__head {
