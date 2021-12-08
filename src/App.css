@@ -1,38 +1,338 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+:root {
+  --font-family: 'Spartan', sans-serif;
+  --desaturated-dark-cyan: hsl(180, 29%, 50%);
+  --light-grayish-cyan: hsl(180, 52%, 96%);
+  --light-grayish-cyan-tablets: hsl(180, 31%, 95%);
+  --dark-grayish-cyan: hsl(180, 8%, 52%);
+  --very-dark-grayish-cyan: hsl(180, 14%, 20%);
+  --font-size: 0.9375rem;
+  --font-size-s: 0.7375rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: var(--light-grayish-cyan);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1, h2, h3, h4, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
   display: flex;
   flex-direction: column;
+}
+
+header {
+  background: url("images/bg-header-desktop.svg");
+  background-repeat: no-repeat;
+  background-color: var(--desaturated-dark-cyan);
+  height: 15vh;
+}
+
+main {
+  background: var(--light-grayish-cyan);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  gap: 2rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4rem;
+  position: relative;
+}
+
+.job__listing__selections {
+  background: white;
+  padding: 1rem 2rem;
+  width: 75%;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: -2.1rem;
+  box-shadow: 0 5px 2px 0px var(--light-grayish-cyan-tablets);
+}
+
+.job__listing__item {
+  width: 75%;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* height: 100px; */
+  gap: 1rem;
+  padding: 1rem;
+  box-shadow: 0 5px 2px 0px var(--light-grayish-cyan-tablets);
+  border-radius: 0.4rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.job__listing__item__head {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  gap: 1rem;
+}
+
+.job__listing__item__image {
+  width: 4.5rem;
+}
+
+.job__listing__item__image img {
+  width: 100%;
+}
+
+.job__listing__item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.job__listing__item__body {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.job__listing__item__skills {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.job__listing__item__top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.job__listing__item__top p {
+  font-size: 0.7rem;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+}
+
+p.text_only {
+  color: var(--desaturated-dark-cyan);
+  font-weight: 700;
+}
+
+p.round_color {
   color: white;
+  text-transform: uppercase;
+  border-radius: 2rem;
+  background: var(--dark-grayish-cyan);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.5rem;
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+p.black_white {
+  color: white;
+  text-transform: uppercase;
+  border-radius: 2rem;
+  background: var(--very-dark-grayish-cyan);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.5rem;
+  font-weight: 700;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.job__listing__item__job {
+  color: var(--very-dark-grayish-cyan);
+  font-weight: 700;
+  font-size: var(--font-size);
+}
+
+span.dot {
+  height: 0.3rem;
+  width: 0.3rem;
+  background: var(--very-dark-grayish-cyan);
+  border-radius: 100%;
+}
+
+.job__listing__item__bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.job__listing__item__bottom__info {
+  color: var(--dark-grayish-cyan);
+  font-size: var(--font-size-s);
+  text-decoration: none;
+  border: none;
+  outline: none;
+  background: none;
+  font-weight: 500;
+  font-family: var(--font-family);
+}
+
+.selected,
+.job__listing__item__skill {
+  text-decoration: none;
+  color: var(--dark-grayish-cyan);
+  background: var(--light-grayish-cyan);
+  font-size: var(--font-size-s);
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.divider {
+  width: 100%;
+  height: 0.09rem;
+  background: var(--dark-grayish-cyan);
+  display: none;
+}
+
+.job__listing__item__skill:hover {
+  cursor: pointer;
+  color: white;
+  background: var(--desaturated-dark-cyan);
+}
+
+.job__listing__item__skill.active {
+  color: white;
+  background: var(--desaturated-dark-cyan);
+}
+
+.selected {
+  text-align: center;
+  border-top-right-radius: unset;
+  border-bottom-right-radius: unset;
+}
+
+
+.job__listing__selection>img {
+  background-color: var(--dark-grayish-cyan);
+  padding: 0.4rem;
+  border-radius: 0.3rem;
+
+}
+
+.job__listing__selection>img:hover {
+  background-color: var(--very-dark-grayish-cyan);
+  cursor: pointer;
+}
+
+.job__listing__selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.4rem;
+  overflow: hidden;
+}
+
+.job__listing__selections__list {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.clear {
+  text-decoration: none;
+  font-size: var(--font-size-s);
+  color: var(--dark-grayish-cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.clear:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 56rem) {
+
+  .pad_2x {
+    padding-top: 8rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .pad_3x {
+    padding-top: 10rem;
+  }
+
+  .pad_4x {
+    padding-top: 12rem;
+  }
+
+  .pad_5x {
+    padding-top: 17rem;
+  }
+
+  .pad_6x {
+    padding-top: 20rem;
+  }
+
+  .job__listing__item__skills {
+    justify-content: flex-start;
+  }
+
+  .job__listing__selections {
+    margin-top: -2.7rem;
+  }
+
+  main {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .job__listing__item__head {
+    padding-top: 1.6rem;
+  }
+
+  .job__listing__item__image {
+    width: 3rem;
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+  }
+
+  .job__listing__item__job:hover {
+    cursor: pointer;
+    color: var(--desaturated-dark-cyan)
+  }
+
+  .divider {
+    display: block;
   }
 }
